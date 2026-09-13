@@ -1,206 +1,109 @@
-# OIBSIP_JavaDevelopment_Task1
-
 # Train Reservation System
 
-## Oasis Infobyte Internship - Java Development
+A web-based Train Reservation System built using **Java 17 and Spring Boot**. The application allows users to search trains, calculate fares, reserve tickets, manage passenger details, view reservations, and cancel bookings. It also provides a separate Admin module for managing trains, routes, users, and reservations.
 
-### Task 1: Train Reservation System
-
-## Objective
-
-The objective of this project is to develop a web-based Train Reservation System that allows users to search trains, reserve tickets, manage bookings, and cancel reservations while providing administrators with tools to manage trains, routes, users, and reservations.
-
-The project demonstrates the implementation of Java Full Stack Development concepts using Spring Boot, Thymeleaf, MySQL, and Spring Security.
+> Developed as part of the Java Development internship program at **Oasis Infobyte**.
 
 ---
 
-## Features
+## 🚀 Quick Access
+
+### 🌐 Live Website
+
+**https://train-reservation-system-ht5t.onrender.com/**
+
+Open the link above to access the deployed Train Reservation System.
+
+### 💻 GitHub Repository
+
+**https://github.com/Rishav-Kundu/Train-Reservation-System**
+
+### 🖥️ Run Locally
+
+Clone the repository, configure a local MySQL database, and follow the [Running the Project Locally](#running-the-project-locally) section below.
+
+---
+
+## 📌 Features
 
 ### User Module
 
-* User Registration and Login
-* Secure Authentication using Spring Security
-* Search Trains between Stations
-* View Available Trains
-* Book Train Tickets
-* Enter Multiple Passenger Details
-* Automatic PNR Generation
-* View My Reservations
-* Cancel Reservations using PNR
-* Update Profile Information
-* Change Password
+- User registration and login
+- Secure authentication using Spring Security
+- Role-based authorization
+- Search trains between stations
+- Case-insensitive station search
+- View available trains
+- Dynamic route-based fare calculation
+- Book train tickets
+- Enter details for multiple passengers
+- Automatic PNR generation
+- View personal reservations
+- Cancel reservations
+- Update profile information
+- Change password
 
 ### Admin Module
 
-* Admin Login
-* Dashboard with Statistics
-* Add New Trains
-* Edit Existing Trains
-* Delete Trains
-* Manage Train Routes
-* Add Route Stations
-* View Registered Users
-* View All Reservations
+- Admin authentication
+- Role-based Admin access
+- Admin dashboard
+- View train and reservation statistics
+- Add new trains
+- Edit existing trains
+- Delete trains
+- Manage train routes
+- Add and manage route stations
+- View registered users
+- View all reservations
 
 ---
 
-## Technologies Used
+## 🛠️ Technology Stack
 
-* Java 17
-* Spring Boot
-* Spring MVC
-* Spring Data JPA
-* Spring Security
-* Thymeleaf
-* MySQL
-* Bootstrap 5
-* HTML5
-* CSS3
-* Maven
-* Git & GitHub
-
----
-
-## Project Structure
-
-```
-src
- ├── controller
- ├── entity
- ├── repository
- ├── service
- ├── config
- ├── templates
- └── static
-```
+| Technology | Purpose |
+|---|---|
+| Java 17 | Application development |
+| Spring Boot 3.5.x | Backend framework |
+| Spring MVC | Web request handling |
+| Spring Data JPA | Database access |
+| Hibernate | Object-relational mapping |
+| Spring Security | Authentication and authorization |
+| BCrypt | Password hashing |
+| Thymeleaf | Server-side HTML rendering |
+| Bootstrap 5.3 | Responsive user interface |
+| MySQL | Local development database |
+| TiDB Cloud | Production MySQL-compatible database |
+| Maven | Build and dependency management |
+| Docker | Application containerization |
+| Git & GitHub | Version control |
+| Render | Cloud deployment |
 
 ---
 
-## Steps Performed
+## 🏗️ Application Architecture
 
-1. Designed the database entities for Users, Trains, Reservations, Routes, and Passengers.
-2. Implemented authentication and authorization using Spring Security.
-3. Developed user registration and login functionality.
-4. Built train search with dynamic fare calculation.
-5. Implemented ticket reservation with passenger information collection.
-6. Generated unique PNR numbers for bookings.
-7. Developed reservation viewing and cancellation features.
-8. Created a complete admin panel for managing trains, routes, users, and reservations.
-9. Improved the user interface with responsive Bootstrap-based professional layouts.
-10. Tested all major workflows and integrated MySQL persistence.
+The application follows a layered **Spring Boot MVC architecture**.
 
----
-
-## How to Run the Project
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Rishav-Kundu/OIBSIP_JavaDevelopment_Task1.git
-```
-
-### 2. Open the project in your preferred IDE
-
-Examples:
-
-* IntelliJ IDEA
-* Spring Tool Suite (STS)
-* VS Code
-
-### 3. Configure MySQL
-
-Create a database named:
-
-```
-train_reservation
-```
-
-Update `application.properties` with your own MySQL credentials:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/train_reservation
-spring.datasource.username=YOUR_USERNAME
-spring.datasource.password=YOUR_PASSWORD
-```
-
-### 4. Run the application
-
-Run:
-
-```
-TrainreservationApplication.java
-```
-
-or
-
-```bash
-./mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=local
-```
-
-### 5. Open in browser
-
-```
-http://localhost:8080
-```
-
----
-
-## Tools Used
-
-* Spring Boot
-* Maven
-* MySQL Workbench
-* IntelliJ IDEA
-* Bootstrap 5
-* Git
-* GitHub
-
----
-
-## Outcome
-
-Successfully developed a responsive and secure Train Reservation System with separate User and Admin modules.
-
-The application supports:
-
-* Secure authentication
-* Train search
-* Ticket booking
-* Passenger management
-* Reservation management
-* PNR-based cancellation
-* Admin train and route management
-* Modern responsive user interface
-
-The project demonstrates practical implementation of Java Full Stack Development concepts using Spring Boot and serves as a real-world reservation management application.
-
----
-
-## GitHub Repository
-
-https://github.com/Rishav-Kundu/OIBSIP_JavaDevelopment_Task1
-
----
-
-## Demo Video
-
-[Add your YouTube or LinkedIn demo video link here.
-
-
-## LinkedIn Post
-
-Add your LinkedIn project post link here.
-
-Example:
-
-```
-https://www.linkedin.com/posts/your-post-link
-```
-
----
-
-## Author
-
-**Rishav Kundu**
+```text
+                         Browser
+                            │
+                            ▼
+                  Thymeleaf / Bootstrap
+                            │
+                            ▼
+                       Controllers
+                            │
+                            ▼
+                         Services
+                            │
+                            ▼
+                   JPA Repositories
+                            │
+                            ▼
+                     JPA / Hibernate
+                            │
+                            ▼
+                 MySQL-compatible DB
 
 Oasis Infobyte Java Development Internship
