@@ -50,12 +50,12 @@ public class ReservationService {
         }
 
         TrainRoute fromRoute =
-                trainRouteRepository.findByTrainAndStationName(
+                trainRouteRepository.findByTrainAndStationNameIgnoreCase(
                         train,
                         fromStation);
 
         TrainRoute toRoute =
-                trainRouteRepository.findByTrainAndStationName(
+                trainRouteRepository.findByTrainAndStationNameIgnoreCase(
                         train,
                         toStation);
 

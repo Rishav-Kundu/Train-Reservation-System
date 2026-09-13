@@ -10,14 +10,14 @@ import java.util.List;
 public interface TrainRouteRepository
         extends JpaRepository<TrainRoute, Long> {
 
-    List<TrainRoute> findByStationName(String stationName);
+    List<TrainRoute> findByStationNameIgnoreCase(String stationName);
 
     List<TrainRoute> findByTrainOrderByStationOrderAsc(
             Train train);
 
     long countByTrain(Train train);
 
-    TrainRoute findByTrainAndStationName(
+    TrainRoute findByTrainAndStationNameIgnoreCase(
             Train train,
             String stationName);
 }

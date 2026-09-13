@@ -54,13 +54,13 @@ public class HomeController {
 
             TrainRoute fromRoute =
                     trainRouteRepository
-                            .findByTrainAndStationName(
+                            .findByTrainAndStationNameIgnoreCase(
                                     train,
                                     from);
 
             TrainRoute toRoute =
                     trainRouteRepository
-                            .findByTrainAndStationName(
+                            .findByTrainAndStationNameIgnoreCase(
                                     train,
                                     to);
 
